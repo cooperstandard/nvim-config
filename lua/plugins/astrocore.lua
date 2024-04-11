@@ -6,7 +6,12 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
-  vim.cmd "set whichwrap+=h,l",
+
+  -- vim.keymap.set("n", "<leader>p", '"+p', { desc = "Paste after cursor from system pasteboard" }),
+  -- vim.keymap.set("n", "<leader><S-p>", '"+<S-p>', { desc = "Paste before cursor from system pasteboard" }),
+  -- vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank to system pasteboard" }),
+  -- vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to system pasteboard" }),
+
   ---@type AstroCoreOpts
   opts = {
     -- Configure core features of AstroNvim
@@ -31,7 +36,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
-        clipboard = "",
+        -- clipboard = "",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -43,10 +48,6 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
 
-      -- keymap.set("n", "<leader>p", '"+p', { desc = "Paste after cursor from system pasteboard" })
-      -- keymap.set("n", "<leader><S-p>", '"+<S-p>', { desc = "Paste before cursor from system pasteboard" })
-      -- keymap.set("n", "<leader>y", '"+y', { desc = "Yank to system pasteboard" })
-      -- keymap.set("v", "<leader>y", '"+y', { desc = "Yank to system pasteboard" })
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
@@ -55,10 +56,9 @@ return {
         L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
-        -- ["<leader>p"] = {
-        --   function() return '"+p' end,
-        --   desc = "Paste after cursor from system pasteboard",
-        -- },
+        d = { '"_d' },
+        c = { '"_c' },
+        ["dd"] = { '"_dd' },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {

@@ -17,3 +17,6 @@ end
 
 require "lazy_setup"
 require "polish"
+
+vim.cmd "set whichwrap+=h,l"
+vim.opt.cc = "80,120"
