@@ -59,6 +59,7 @@ return {
         d = { '"_d' },
         c = { '"_c' },
         ["dd"] = { '"_dd' },
+        ["cc"] = { '"_cc' },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
@@ -74,6 +75,7 @@ return {
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        ["<C-q>"] = { ":bdelete<cr>", desc = "Close buffer" },
       },
       t = {
         -- setting a mapping to false will disable it
