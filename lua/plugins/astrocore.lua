@@ -56,6 +56,8 @@ return {
         L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
+        x = { '"_x' },
+        s = { '"_s' },
         d = { '"_d' },
         c = { '"_c' },
         ["dd"] = { '"_dd' },
