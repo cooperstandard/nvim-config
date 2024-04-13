@@ -19,4 +19,5 @@ require "lazy_setup"
 require "polish"
 
 vim.cmd "set whichwrap+=h,l"
-vim.opt.cc = "80,120"
+vim.opt.cc = "80,120" -- add rulers at columns 80 and 120
+vim.keymap.del("n", "s") -- to make mini.surround work better
