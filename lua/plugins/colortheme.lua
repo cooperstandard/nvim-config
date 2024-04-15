@@ -1,4 +1,5 @@
 return {
-  'savq/melange-nvim'
+  -- 'savq/melange-nvim'
   -- 'tanvirtin/monokai.nvim'
+"ellisonleao/gruvbox.nvim"
 }

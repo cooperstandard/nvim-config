@@ -21,3 +21,12 @@ require "polish"
 vim.cmd "set whichwrap+=h,l"
 vim.opt.cc = "80,120" -- add rulers at columns 80 and 120
 vim.keymap.del("n", "s") -- to make mini.surround work better
+vim.opt.cursorline = false
+
+-- no rulers or cursorline in markdown, txt, or csv files
+vim.cmd([[
+  augroup cc
+    au!
+    autocmd Filetype markdown,md,txt,csv,makefile set colorcolumn =
+  augroup end
+]])
