@@ -62,6 +62,8 @@ return {
         c = { '"_c' },
         ["dd"] = { '"_dd' },
         ["cc"] = { '"_cc' },
+        ["<C-d>"] = {'<C-d>zz'},
+        ["<C-u>"] = {'<C-u>zz'},
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
