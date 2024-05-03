@@ -13,7 +13,7 @@ return {
     -- colorscheme = "astrodark",
     -- colorscheme = "melange",
     -- colorscheme = "monokai_soda",
-    colorscheme = "gruvbox",
+    colorscheme = "kanagawa-wave",
 
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {

@@ -19,14 +19,35 @@ require "lazy_setup"
 require "polish"
 
 vim.cmd "set whichwrap+=h,l"
-vim.opt.cc = "80,120" -- add rulers at columns 80 and 120
+vim.opt.cc = "120" -- add rulers at columns 80 and 120
 vim.keymap.del("n", "s") -- to make mini.surround work better
 vim.opt.cursorline = false
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 
 -- no rulers or cursorline in markdown, txt, or csv files
 vim.cmd([[
   augroup cc
     au!
     autocmd Filetype markdown,md,txt,csv,makefile set colorcolumn =
+    autocmd Filetype markdown,md,txt set wrap
   augroup end
 ]])
+
+
+vim.api.nvim_create_autocmd('User', { pattern = 'LeapEnter',
+    callback = function()
+      vim.cmd.hi('Cursor', 'blend=100')
+      vim.opt.guicursor:append { 'a:Cursor/lCursor' }
+    end,
+  }
+)
+
+
+vim.api.nvim_create_autocmd('User', { pattern = 'LeapLeave',
+    callback = function()
+      vim.cmd.hi('Cursor', 'blend=0')
+      vim.opt.guicursor:remove { 'a:Cursor/lCursor' }
+    end,
+  }
+)
