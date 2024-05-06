@@ -12,9 +12,10 @@ return {
     -- change colorscheme
     -- colorscheme = "astrodark",
     -- colorscheme = "melange",
-    colorscheme = "monokai-pro-machine",
-    -- colorscheme = "kanagawa-wave",
+    -- colorscheme = "monokai-pro-spectrum",
+    -- colorscheme = "kanagawa-dragon",
     -- colorscheme = "catppuccin-mocha",
+    colorscheme = "catppuccin",
 
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {

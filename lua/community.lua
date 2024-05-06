@@ -6,7 +6,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.recipes.heirline-vscode-winbar" },
-  { import = "astrocommunity.colorscheme.catppuccin"},
+  -- { import = "astrocommunity.colorscheme.catppuccin"},
   { import = "astrocommunity.colorscheme.monokai-pro-nvim"},
   { import = "astrocommunity.pack.java"},
   { import = "astrocommunity.pack.rainbow-delimiter-indent-blankline"},

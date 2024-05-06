@@ -64,6 +64,8 @@ return {
         ["cc"] = { '"_cc' },
         ["<C-d>"] = {'<C-d>zz'},
         ["<C-u>"] = {'<C-u>zz'},
+        ["="] = [[<cmd>vertical resize +2<cr>]], -- increase width
+        ["-"] = [[<cmd>vertical resize -2<cr>]], -- decrease width
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
