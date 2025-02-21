@@ -16,6 +16,7 @@ return {
   { import = "astrocommunity.diagnostics.trouble-nvim"},
   { import = "astrocommunity.fuzzy-finder.snacks-picker"},
   { import = "astrocommunity.scrolling.nvim-scrollbar"},
+  { import = "astrocommunity.editing-support.zen-mode-nvim"}
   -- { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
 }
