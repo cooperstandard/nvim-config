@@ -59,13 +59,13 @@ return {
 
         x = { '"_x' },
         ["dd"] = { '"_dd' },
-        ["<C-d>"] = {'<C-d>zz'},
-        ["<C-u>"] = {'<C-u>zz'},
+        ["<C-d>"] = { "<C-d>zz" },
+        ["<C-u>"] = { "<C-u>zz" },
         ["<Leader>="] = [[<cmd>vertical resize +2<cr>]], -- increase width
         ["<Leader>-"] = [[<cmd>vertical resize -2<cr>]], -- decrease width
-        ["<Leader>z"] = {desc = "Undotree"},
-        ["<Leader>zz"] = {":UndotreeToggle<CR>UndotreeFocus<CR>", desc = "Toggle Undotree" },
-        ["<Leader>zf"] = {":UndotreeFocus<CR>", desc = "Focus Undotree" },
+        ["<Leader>z"] = { desc = "Undotree" },
+        ["<Leader>zz"] = { ":UndotreeToggle<CR>UndotreeFocus<CR>", desc = "Toggle Undotree" },
+        ["<Leader>zf"] = { ":UndotreeFocus<CR>", desc = "Focus Undotree" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
@@ -85,17 +85,13 @@ return {
 
         ["<Leader>bt"] = { ":tabnew<cr>", desc = "Create new tab" },
         ["<Leader>bT"] = { ":tabclose<cr>", desc = "Close current tab" },
-        ["<Leader>by"] = { ":Cppath<cr>", desc = "yank current buffer path"},
+        ["<Leader>by"] = { ":Cppath<cr>", desc = "yank current buffer path" },
 
         ["<Leader>c"] = {
           function()
-            local bufs = vim.fn.getbufinfo({ buflisted = 1 })
+            local bufs = vim.fn.getbufinfo { buflisted = 1 }
             require("astrocore.buffer").close(0)
-            if
-              require("astrocore").is_available("alpha-nvim") and not bufs[2]
-            then
-              require("alpha").start(true)
-            end
+            if require("astrocore").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
           end,
           desc = "Close buffer",
         },
