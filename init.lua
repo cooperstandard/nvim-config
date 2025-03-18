@@ -25,37 +25,36 @@ vim.keymap.set("n", "ss", "noop") -- to make mini.surround work better
 vim.opt.cursorline = false
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
+vim.cmd "set signcolumn=yes"
 
 -- no rulers or cursorline in markdown, txt, or csv files
-vim.cmd([[
+vim.cmd [[
   augroup cc
     au!
     autocmd Filetype markdown,md,txt,csv,makefile set colorcolumn =
     autocmd Filetype markdown,md,txt set wrap
     autocmd Filetype markdown,md set conceallevel=1
   augroup end
-]])
+]]
 
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LeapEnter",
+  callback = function()
+    vim.cmd.hi("Cursor", "blend=100")
+    vim.opt.guicursor:append { "a:Cursor/lCursor" }
+  end,
+})
 
-vim.api.nvim_create_autocmd('User', { pattern = 'LeapEnter',
-    callback = function()
-      vim.cmd.hi('Cursor', 'blend=100')
-      vim.opt.guicursor:append { 'a:Cursor/lCursor' }
-    end,
-  }
-)
-
-
-vim.api.nvim_create_autocmd('User', { pattern = 'LeapLeave',
-    callback = function()
-      vim.cmd.hi('Cursor', 'blend=0')
-      vim.opt.guicursor:remove { 'a:Cursor/lCursor' }
-    end,
-  }
-)
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LeapLeave",
+  callback = function()
+    vim.cmd.hi("Cursor", "blend=0")
+    vim.opt.guicursor:remove { "a:Cursor/lCursor" }
+  end,
+})
 
 vim.api.nvim_create_user_command("Cppath", function()
-    local path = vim.fn.expand("%:p")
-    vim.fn.setreg("+", path)
-    vim.notify('Copied "' .. path .. '" to the pasteboard')
+  local path = vim.fn.expand "%:p"
+  vim.fn.setreg("+", path)
+  vim.notify('Copied "' .. path .. '" to the pasteboard')
 end, {})

@@ -22,6 +22,7 @@ return {
   { import = "astrocommunity.editing-support.zen-mode-nvim" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.test.nvim-coverage" },
+  { import = "astrocommunity.motion.harpoon" },
   -- { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
 }
