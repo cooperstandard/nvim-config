@@ -58,3 +58,8 @@ vim.api.nvim_create_user_command("Cppath", function()
   vim.fn.setreg("+", path)
   vim.notify('Copied "' .. path .. '" to the pasteboard')
 end, {})
+
+vim.cmd [[
+    vnoremap K :m '<-2<CR>gvgv
+    vnoremap J :m '>+1<CR>gvgv
+]]
