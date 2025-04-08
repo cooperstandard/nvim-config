@@ -60,6 +60,6 @@ vim.api.nvim_create_user_command("Cppath", function()
 end, {})
 
 vim.cmd [[
-    vnoremap K :m '<-2<CR>gvgv
-    vnoremap J :m '>+1<CR>gvgv
+    vnoremap K :m '<-2<CR>gv=<ESC>gv
+    vnoremap J :m '>+1<CR>gv=<ESC>gv
 ]]
