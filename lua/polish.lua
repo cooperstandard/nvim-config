@@ -15,6 +15,6 @@
 --   },
 -- }
 -- vim.api.nvim_set_hl(0, "Comment", { fg = "#c68585" }) -- for dark themes
-vim.api.nvim_set_hl(0, "Comment", { fg = "#A4B668" }) -- for dark themes
-vim.api.nvim_set_hl(0, "@comment", { link = "Comment" })
+-- vim.api.nvim_set_hl(0, "Comment", { fg = "#A4B668" }) -- for dark themes
+-- vim.api.nvim_set_hl(0, "@comment", { link = "Comment" })
 if vim.g.vscode then vim.o.cmdheight = 4 end
