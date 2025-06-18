@@ -1,4 +1,3 @@
-
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -22,8 +21,8 @@ return {
       format_on_save = {
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
-          "go",
-		  "lua",
+          -- "go",
+          "lua",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
