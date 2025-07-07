@@ -62,4 +62,5 @@ end, {})
 vim.cmd [[
     vnoremap K :m '<-2<CR>gv=<ESC>gv
     vnoremap J :m '>+1<CR>gv=<ESC>gv
+    imap <script><silent><nowait><expr> <C-g> codeium#Accept()
 ]]
