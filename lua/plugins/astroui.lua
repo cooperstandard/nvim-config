@@ -1,4 +1,3 @@
-
 -- AstroUI provides the basis for configuring the AstroNvim User Interface
 -- Configuration documentation can be found with `:h astroui`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -10,12 +9,12 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    -- colorscheme = "astrodark",
+    -- colorscheme = "astrotheme",
     -- colorscheme = "melange",
     -- colorscheme = "monokai-pro-classic",
     colorscheme = "monokai-nightasty",
-    -- colorscheme = "kanagawa-dragon",
-    -- colorscheme = "catppuccin-mocha",
+    -- colorscheme = "kanagawa",
+    -- colorscheme = "catppuccin-frappe",
     -- colorscheme = "catppuccin",
 
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
