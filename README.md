@@ -3,7 +3,7 @@ A template for getting started with [AstroNvim](https://github.com/AstroNvim/Ast
 
 ## 🛠️ Installation
 
-Make sure that a nerdfont is installed (Meslolgs size 14) and ripgrep
+Make sure that a nerdfont is installed (berkeley size 14) and ripgrep
 
 #### Make a backup of your current nvim and shared folder
 
