@@ -6,12 +6,6 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
-
-  -- vim.keymap.set("n", "<leader>p", '"+p', { desc = "Paste after cursor from system pasteboard" }),
-  -- vim.keymap.set("n", "<leader><S-p>", '"+<S-p>', { desc = "Paste before cursor from system pasteboard" }),
-  -- vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank to system pasteboard" }),
-  -- vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to system pasteboard" }),
-
   ---@type AstroCoreOpts
   opts = {
     -- Configure core features of AstroNvim
@@ -19,7 +13,7 @@ return {
       large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
-      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+      diagnostics = { virtual_text = true, virtual_lines = false }, -- diagnostic settings on startup
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
@@ -28,13 +22,26 @@ return {
       virtual_text = false,
       underline = true,
     },
+    -- passed to `vim.filetype.add`
+    filetypes = {
+      -- see `:h vim.filetype.add` for usage
+      extension = {
+        foo = "fooscript",
+      },
+      filename = {
+        [".foorc"] = "fooscript",
+      },
+      pattern = {
+        [".*/etc/foo/.*"] = "fooscript",
+      },
+    },
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
         relativenumber = false, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
-        signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+        signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
         shiftwidth = 2,
         -- clipboard = "",
@@ -48,7 +55,6 @@ return {
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
-
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
@@ -63,9 +69,6 @@ return {
         ["<C-u>"] = { "<C-u>zz" },
         ["<Leader>="] = [[<cmd>vertical resize +2<cr>]], -- increase width
         ["<Leader>-"] = [[<cmd>vertical resize -2<cr>]], -- decrease width
-        ["<Leader>z"] = { desc = "Undotree" },
-        ["<Leader>zz"] = { ":UndotreeToggle<CR>UndotreeFocus<CR>", desc = "Toggle Undotree" },
-        ["<Leader>zf"] = { ":UndotreeFocus<CR>", desc = "Focus Undotree" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
@@ -76,6 +79,7 @@ return {
           end,
           desc = "Pick to close",
         },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
